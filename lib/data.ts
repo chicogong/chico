@@ -1,18 +1,38 @@
+export const profile = {
+  name: 'Chico Gong',
+  role: 'Realtime AI Engineer',
+  company: 'Tencent',
+  location: 'Beijing, China',
+  bio: 'Building conversational AI and real-time voice experiences that let people talk to software as naturally as they talk to each other.',
+  github: 'chicogong',
+  twitter: 'chicogongx',
+  email: 'chicogong@tencent.com',
+}
+
 export const projects = [
   {
     name: 'Realtime AI',
-    desc: 'Real-time voice conversation platform',
+    desc: 'WebSocket-based real-time voice conversation platform',
     url: 'https://realtime-ai.chat',
+    github: null,
   },
   {
     name: 'TRTC AI Build',
-    desc: 'Quick build real-time AI apps',
+    desc: 'Build real-time AI voice apps with Tencent RTC',
     url: 'https://github.com/chicogong/trtc-ai-build-quickly',
+    github: 'chicogong/trtc-ai-build-quickly',
   },
   {
-    name: 'Conversational AI',
-    desc: 'Voice/video AI platform',
+    name: 'Conversational AI Agent',
+    desc: 'TRTC-based voice/video AI agent platform',
     url: 'https://github.com/chicogong/conversational-ai-agent',
+    github: 'chicogong/conversational-ai-agent',
+  },
+  {
+    name: 'AI Tools',
+    desc: 'Collection of realtime AI utilities and demos',
+    url: 'https://tools.realtime-ai.chat',
+    github: null,
   },
 ]
 

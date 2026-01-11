@@ -1,66 +1,74 @@
-import { projects, links } from '@/lib/data'
+import { profile, projects, links } from '@/lib/data'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="max-w-2xl mx-auto px-6 py-20">
+    <main className="min-h-screen bg-white">
+      <div className="max-w-2xl mx-auto px-6 py-16 md:py-24">
 
         {/* Header */}
-        <header className="mb-16">
-          <h1 className="text-5xl font-bold mb-3 tracking-tight">Chico Gong</h1>
-          <p className="text-xl text-gray-400 text-balance">
-            Building conversational AI and real-time voice experiences at Tencent
+        <header className="mb-12">
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+            {profile.name}
+          </h1>
+          <p className="text-lg text-neutral-600 mb-2">
+            {profile.role} at {profile.company}
+          </p>
+          <p className="text-neutral-500 leading-relaxed">
+            {profile.bio}
           </p>
         </header>
 
         {/* Projects */}
-        <section className="mb-16">
-          <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Projects</h2>
-          <div className="space-y-4">
+        <section className="mb-12">
+          <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-6">
+            Selected Work
+          </h2>
+          <ul className="space-y-6">
             {projects.map((project) => (
-              <a
-                key={project.name}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block group"
-              >
-                <div className="flex items-start justify-between py-3 px-4 -mx-4 rounded-lg hover:bg-white/5 transition-colors">
-                  <div>
-                    <h3 className="font-medium group-hover:text-white transition-colors">{project.name}</h3>
-                    <p className="text-sm text-gray-500 mt-0.5">{project.desc}</p>
-                  </div>
-                  <svg className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors mt-1 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
+              <li key={project.name}>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
+                  <h3 className="font-medium mb-1 link-underline">
+                    {project.name}
+                  </h3>
+                  <p className="text-sm text-neutral-600">
+                    {project.desc}
+                  </p>
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
-        {/* Links */}
-        <section>
-          <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">Connect</h2>
-          <div className="flex gap-6">
+        {/* Connect */}
+        <section className="mb-12">
+          <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-6">
+            Connect
+          </h2>
+          <ul className="space-y-3">
             {links.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors text-sm"
-              >
-                {link.name}
-              </a>
+              <li key={link.name}>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-700 link-underline text-sm"
+                >
+                  {link.name}
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
 
         {/* Footer */}
-        <footer className="mt-20 pt-8 border-t border-white/10">
-          <p className="text-xs text-gray-600">
-            © 2026 · Beijing
+        <footer className="pt-8 border-t border-neutral-200">
+          <p className="text-xs text-neutral-400">
+            © 2026 · {profile.location}
           </p>
         </footer>
       </div>
