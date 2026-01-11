@@ -1,9 +1,42 @@
 import { profile, projects, links, skills } from '@/lib/data'
 
 export default function Home() {
+  // JSON-LD structured data for SEO
+  // Content is from our own data file and JSON.stringify auto-escapes, so it's safe
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: profile.name,
+    jobTitle: profile.role,
+    worksFor: {
+      '@type': 'Organization',
+      name: profile.company,
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Beijing',
+      addressCountry: 'CN',
+    },
+    email: profile.email,
+    url: 'https://chico-lac.vercel.app',
+    sameAs: [
+      `https://github.com/${profile.github}`,
+      `https://x.com/${profile.twitter}`,
+    ],
+    description: profile.bio,
+    knowsAbout: skills.map(skill => skill.name),
+  }
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30">
-      <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <>
+      {/* JSON-LD Structured Data for search engines */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <main className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30">
+        <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
 
         {/* Header with Avatar */}
         <header className="mb-16 fade-in">
@@ -157,5 +190,6 @@ export default function Home() {
         </footer>
       </div>
     </main>
+    </>
   )
 }
