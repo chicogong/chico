@@ -2,13 +2,13 @@ import { profile, projects, links, skills } from '@/lib/data'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30">
+    <main className="min-h-screen bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30">
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
 
         {/* Header with Avatar */}
         <header className="mb-16 fade-in">
           <div className="flex items-start gap-6 mb-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl font-bold shrink-0 shadow-lg scale-on-hover">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold shrink-0 shadow-lg scale-on-hover">
               C
             </div>
             <div>
@@ -54,7 +54,7 @@ export default function Home() {
         {/* Projects with Cards */}
         <section className="mb-16 slide-up" style={{ animationDelay: '300ms' }}>
           <h2 className="text-sm font-semibold text-neutral-900 uppercase tracking-wider mb-8 flex items-center gap-2">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-purple-600"></span>
+            <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-cyan-600"></span>
             Selected Work
           </h2>
           <div className="grid gap-4 md:gap-6">
@@ -131,7 +131,7 @@ export default function Home() {
         {/* Connect */}
         <section className="mb-16 slide-up" style={{ animationDelay: '500ms' }}>
           <h2 className="text-sm font-semibold text-neutral-900 uppercase tracking-wider mb-6 flex items-center gap-2">
-            <span className="w-8 h-[2px] bg-gradient-to-r from-purple-600 to-pink-600"></span>
+            <span className="w-8 h-[2px] bg-gradient-to-r from-blue-600 to-cyan-600"></span>
             Connect
           </h2>
           <div className="flex flex-wrap gap-4">

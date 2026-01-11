@@ -1,5 +1,5 @@
 export const profile = {
-  name: 'Chico Gong',
+  name: 'Chico',
   role: 'Realtime AI Engineer',
   company: 'Tencent',
   location: 'Beijing, China',
