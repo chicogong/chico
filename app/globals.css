@@ -4,16 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-slate-950 text-white antialiased;
+    @apply bg-black text-white antialiased;
   }
 }
 
 @layer utilities {
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
-  }
-
-  .gradient-text {
-    @apply bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  .text-balance {
+    text-wrap: balance;
   }
 }
