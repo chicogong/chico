@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code', // 用户需要从Google Search Console获取
+    google: '01p8stpIcQDDBokaub6E3Luwr_bbTgg1FvOClREYrm0',
   },
 }
 
