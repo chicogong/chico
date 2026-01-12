@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 
 interface GitHubStats {
   repos: number
@@ -80,13 +79,11 @@ export function Avatar() {
   }
 
   return (
-    <Image
+    <img
       src={avatarUrl}
       alt="Chico avatar"
-      width={80}
-      height={80}
       className="w-20 h-20 rounded-full shrink-0 shadow-lg scale-on-hover"
-      priority
+      loading="eager"
     />
   )
 }
