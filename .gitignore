@@ -50,3 +50,9 @@ firebase-debug.log
 
 # Claude settings
 .claude/
+
+# Screenshots and test images
+*-screenshot.png
+*-screenshot.jpg
+screenshot*.png
+screenshot*.jpg
