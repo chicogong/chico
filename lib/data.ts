@@ -58,3 +58,31 @@ export const links = [
   { name: 'X', url: 'https://x.com/chicogongx' },
   { name: 'Email', url: 'mailto:chicogong@tencent.com' },
 ]
+
+export const articles = [
+  {
+    title: 'Building Real-time Voice AI with WebRTC',
+    url: 'https://realtime-ai.chat/blog/webrtc-voice-ai',
+    date: '2024-12',
+  },
+  {
+    title: 'Optimizing WebSocket Performance for AI Agents',
+    url: 'https://realtime-ai.chat/blog/websocket-optimization',
+    date: '2024-11',
+  },
+]
+
+export const experience = [
+  {
+    company: 'Tencent',
+    role: 'Realtime AI Engineer',
+    period: '2023 - Present',
+    description: 'Building real-time voice AI and conversational experiences',
+  },
+  {
+    company: 'Previous Company',
+    role: 'Full Stack Developer',
+    period: '2021 - 2023',
+    description: 'Developed web applications with React and Node.js',
+  },
+]

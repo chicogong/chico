@@ -5,7 +5,11 @@ import { Analytics } from './components/Analytics'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { PerformanceMonitor } from './components/PerformanceMonitor'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chico-lac.vercel.app'),

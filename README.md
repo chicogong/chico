@@ -14,6 +14,26 @@ Chico Gong的个人主页，使用Next.js 15构建的现代化、简约风格的
 - **React 19** - UI库
 - **TypeScript** - 类型安全
 - **Tailwind CSS 3** - 原子化CSS框架
+- **GitHub API** - 动态获取GitHub数据
+
+## 新功能
+
+### GitHub API 集成
+- 自动从GitHub API获取真实的仓库数量和stars数据
+- 动态加载GitHub头像
+- 使用ISR（Incremental Static Regeneration）缓存数据（1小时）
+- 支持GitHub Token配置以避免API速率限制
+
+### 内容扩展
+- 博客/文章链接部分
+- 工作经历时间线展示
+- 加载状态和骨架屏
+
+### 性能优化
+- 字体预加载（display: swap）
+- Next.js Image组件优化图片加载
+- 响应式字体大小（移动端15px）
+- 客户端组件按需加载
 
 ## 项目结构
 
@@ -22,18 +42,28 @@ Chico Gong的个人主页，使用Next.js 15构建的现代化、简约风格的
 ```
 chico/
 ├── app/                      # Next.js App Router 目录
-│   ├── page.tsx             # 主页组件（首页内容）
-│   ├── layout.tsx           # 根布局（HTML结构、字体、元数据）
-│   ├── globals.css          # 全局样式和动画定义
-│   └── favicon.ico          # 网站图标
+│   ├── api/
+│   │   └── github/
+│   │       └── route.ts      # GitHub API路由
+│   ├── components/
+│   │   ├── GitHubComponents.tsx  # GitHub数据组件
+│   │   ├── Analytics.tsx     # 分析组件
+│   │   ├── ErrorBoundary.tsx # 错误边界
+│   │   └── PerformanceMonitor.tsx # 性能监控
+│   ├── page.tsx              # 主页组件（首页内容）
+│   ├── loading.tsx           # 加载状态组件
+│   ├── layout.tsx            # 根布局（HTML结构、字体、元数据）
+│   ├── globals.css           # 全局样式和动画定义
+│   └── favicon.ico           # 网站图标
 ├── lib/
-│   └── data.ts              # 内容数据配置（个人信息、项目、链接）
+│   └── data.ts               # 内容数据配置（个人信息、项目、文章、经历）
 ├── public/                   # 静态资源目录
-├── package.json             # 项目依赖和脚本
-├── tsconfig.json            # TypeScript配置
-├── tailwind.config.ts       # Tailwind CSS配置
-├── postcss.config.mjs       # PostCSS配置
-└── next.config.ts           # Next.js配置
+├── .env.example              # 环境变量模板
+├── package.json              # 项目依赖和脚本
+├── tsconfig.json             # TypeScript配置
+├── tailwind.config.ts        # Tailwind CSS配置
+├── postcss.config.mjs        # PostCSS配置
+└── next.config.ts            # Next.js配置
 ```
 
 ### 文件详细说明
@@ -75,10 +105,28 @@ chico/
 **作用**: 内容数据管理中心
 **导出**:
 - `profile`: 个人信息（姓名、职位、公司、地点、简介）
+- `skills`: 技能列表
 - `projects`: 项目列表（名称、描述、链接、GitHub仓库）
+- `articles`: 博客文章列表（标题、链接、日期）
+- `experience`: 工作经历（公司、职位、时间、描述）
 - `links`: 社交链接（GitHub、X、邮箱）
 
 **优点**: 集中管理内容，修改时只需编辑这一个文件
+
+#### `app/api/github/route.ts`
+**作用**: GitHub API数据获取
+**功能**:
+- 从GitHub API获取用户数据和仓库信息
+- 计算总stars数
+- 支持ISR缓存（1小时）
+- 错误时返回默认值
+
+#### `app/components/GitHubComponents.tsx`
+**作用**: GitHub数据展示组件
+**包含**:
+- `GitHubStats`: 显示仓库数、贡献数、stars数
+- `Avatar`: 动态加载GitHub头像
+- 加载状态处理
 
 #### `package.json`
 **作用**: 项目配置和依赖管理
@@ -111,6 +159,23 @@ chico/
 **当前配置**: 使用默认设置
 
 ## 本地开发
+
+### 环境变量配置（可选）
+复制 `.env.example` 到 `.env.local` 并配置GitHub Token：
+```bash
+cp .env.example .env.local
+```
+
+编辑 `.env.local`：
+```bash
+# 可选：添加GitHub Token以避免API速率限制
+GITHUB_TOKEN=your_github_token_here
+```
+
+获取GitHub Token：
+1. 访问 https://github.com/settings/tokens
+2. 创建新的Personal Access Token
+3. 不需要任何特殊权限（用于读取公开数据）
 
 ### 安装依赖
 ```bash
