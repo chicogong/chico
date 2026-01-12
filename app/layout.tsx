@@ -73,10 +73,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <head>
-        <link rel="icon" href="/og-image.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/og-image.svg" />
-      </head>
       <body className={inter.className}>
         <ErrorBoundary>
           {children}
