@@ -14,12 +14,17 @@ export function GitHubStats() {
 
   useEffect(() => {
     fetch('/api/github')
-      .then(res => res.json())
+      .then(res => {
+        console.log('GitHub Stats API response status:', res.status)
+        return res.json()
+      })
       .then(data => {
+        console.log('GitHub Stats data:', data)
         setStats(data)
         setLoading(false)
       })
-      .catch(() => {
+      .catch(err => {
+        console.error('GitHub Stats API error:', err)
         setStats({ repos: 50, stars: 100, avatarUrl: '' })
         setLoading(false)
       })
@@ -59,12 +64,19 @@ export function Avatar() {
 
   useEffect(() => {
     fetch('/api/github')
-      .then(res => res.json())
+      .then(res => {
+        console.log('GitHub API response status:', res.status)
+        return res.json()
+      })
       .then(data => {
+        console.log('GitHub API data:', data)
         setAvatarUrl(data.avatarUrl)
         setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch(err => {
+        console.error('GitHub API error:', err)
+        setLoading(false)
+      })
   }, [])
 
   if (loading || !avatarUrl) {
