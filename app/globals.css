@@ -49,3 +49,19 @@
     transform: translateY(0);
   }
 }
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .slide-up,
+  .scale-on-hover {
+    animation: none;
+    transition: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

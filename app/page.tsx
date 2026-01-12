@@ -41,7 +41,10 @@ export default function Home() {
         {/* Header with Avatar */}
         <header className="mb-16 fade-in">
           <div className="flex items-start gap-6 mb-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold shrink-0 shadow-lg scale-on-hover">
+            <div
+              className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold shrink-0 shadow-lg scale-on-hover"
+              aria-hidden="true"
+            >
               C
             </div>
             <div>
@@ -97,6 +100,7 @@ export default function Home() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`访问项目: ${project.name} - ${project.desc}`}
                 className="group relative p-6 rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur-sm hover:bg-white hover:shadow-xl hover:border-blue-200 transition-all duration-300"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -174,6 +178,7 @@ export default function Home() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`通过${link.name}联系我`}
                 className="px-5 py-2.5 rounded-full bg-white border border-neutral-200 text-sm font-medium text-neutral-700 hover:bg-neutral-50 hover:border-neutral-300 hover:shadow-md transition-all scale-on-hover"
               >
                 {link.name}

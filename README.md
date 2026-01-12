@@ -231,7 +231,8 @@ npm run build
 - `app/page.tsx` - JSON-LD结构化数据
 - `app/sitemap.ts` - Sitemap生成逻辑
 - `app/robots.ts` - Robots.txt配置
-- `SEO_GUIDE.md` - 完整SEO设置指南
+- `docs/SEO_GUIDE.md` - 完整SEO设置指南
+- `docs/SOCIAL_SHARE_TEMPLATES.md` - 社交媒体分享文案
 
 ## 许可证
 
