@@ -23,6 +23,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: '/og-image.svg',
+    apple: '/og-image.svg',
+  },
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
