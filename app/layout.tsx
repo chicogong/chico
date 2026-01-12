@@ -1,6 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from './components/Analytics'
+import { ErrorBoundary } from './components/ErrorBoundary'
+import { PerformanceMonitor } from './components/PerformanceMonitor'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,12 +30,21 @@ export const metadata: Metadata = {
     title: 'Chico - Realtime AI Engineer',
     description: 'Building conversational AI and real-time voice experiences. Working on WebRTC, voice AI, and real-time communication at Tencent.',
     siteName: 'Chico Portfolio',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Chico - Realtime AI Engineer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Chico - Realtime AI Engineer',
     description: 'Building conversational AI and real-time voice experiences',
     creator: '@chicogongx',
+    images: ['/og-image.svg'],
   },
   robots: {
     index: true,
@@ -57,7 +69,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ErrorBoundary>
+          {children}
+          <Analytics />
+          <PerformanceMonitor />
+        </ErrorBoundary>
+      </body>
     </html>
   )
 }
