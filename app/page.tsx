@@ -19,7 +19,7 @@ export default function Home() {
       addressCountry: 'CN',
     },
     email: profile.email,
-    url: 'https://chico-lac.vercel.app',
+    url: 'https://chico.aimake.cc',
     sameAs: [
       `https://github.com/${profile.github}`,
       `https://x.com/${profile.twitter}`,
@@ -41,16 +41,16 @@ export default function Home() {
 
         {/* Header with Avatar */}
         <header className="mb-16 fade-in">
-          <div className="flex items-start gap-6 mb-6">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6">
             <Avatar />
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3 gradient-text">
+            <div className="text-center sm:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3 gradient-text">
                 {profile.name}
               </h1>
-              <p className="text-lg text-neutral-600 mb-1">
+              <p className="text-base sm:text-lg text-neutral-600 mb-1">
                 {profile.role} <span className="text-neutral-400">@</span> <span className="font-medium">{profile.company}</span>
               </p>
-              <p className="text-sm text-neutral-500 flex items-center gap-1">
+              <p className="text-sm text-neutral-500 flex items-center justify-center sm:justify-start gap-1">
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -60,7 +60,7 @@ export default function Home() {
             </div>
           </div>
 
-          <p className="text-neutral-600 leading-relaxed text-lg max-w-2xl">
+          <p className="text-neutral-600 leading-relaxed text-base sm:text-lg max-w-2xl mx-auto sm:mx-0">
             {profile.bio}
           </p>
         </header>

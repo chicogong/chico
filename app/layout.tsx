@@ -12,14 +12,14 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chico-lac.vercel.app'),
+  metadataBase: new URL('https://chico.aimake.cc'),
   title: {
     default: 'Chico - Realtime AI Engineer',
     template: '%s | Chico'
   },
   description: 'Building conversational AI and real-time voice experiences. Realtime AI Engineer at Tencent, working on WebRTC, voice AI, and real-time communication technologies.',
   keywords: ['Chico', 'Realtime AI', 'Voice AI', 'WebRTC', 'Tencent', 'AI Engineer', 'Conversational AI', 'Real-time Communication', 'WebSocket', 'AI Voice', 'Beijing'],
-  authors: [{ name: 'Chico', url: 'https://chico-lac.vercel.app' }],
+  authors: [{ name: 'Chico', url: 'https://chico.aimake.cc' }],
   creator: 'Chico',
   publisher: 'Chico',
   formatDetection: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    url: 'https://chico-lac.vercel.app',
+    url: 'https://chico.aimake.cc',
     title: 'Chico - Realtime AI Engineer',
     description: 'Building conversational AI and real-time voice experiences. Working on WebRTC, voice AI, and real-time communication at Tencent.',
     siteName: 'Chico Portfolio',
