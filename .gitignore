@@ -56,3 +56,6 @@ firebase-debug.log
 *-screenshot.jpg
 screenshot*.png
 screenshot*.jpg
+
+# Playwright MCP temporary files
+.playwright-mcp/
