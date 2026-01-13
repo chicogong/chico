@@ -4,9 +4,10 @@ Chico Gong的个人主页，使用Next.js 15构建的现代化、简约风格的
 
 ## 在线访问
 
-- 网站: [chico-lac.vercel.app](https://chico-lac.vercel.app)
-- GitHub: [@chicogong](https://github.com/chicogong)
-- X: [@chicogongx](https://x.com/chicogongx)
+- 🌐 主站: [chico.aimake.cc](https://chico.aimake.cc)
+- 🔗 备用: [chico-lac.vercel.app](https://chico-lac.vercel.app)
+- 💻 GitHub: [@chicogong](https://github.com/chicogong)
+- 🐦 X: [@chicogongx](https://x.com/chicogongx)
 
 ## 技术栈
 
@@ -232,8 +233,10 @@ export const projects = [
 ## 部署
 
 项目已配置自动部署：
-- 推送到GitHub仓库后，Vercel自动触发部署
-- 部署地址：[chico-lac.vercel.app](https://chico-lac.vercel.app)
+- ✅ 推送到 GitHub 仓库后，Vercel 自动触发部署
+- ✅ GitHub Actions CI 自动运行代码检查
+- 🌐 主域名：[chico.aimake.cc](https://chico.aimake.cc)
+- 🔗 Vercel 域名：[chico-lac.vercel.app](https://chico-lac.vercel.app)
 
 ### 手动部署到Vercel
 ```bash
@@ -277,7 +280,7 @@ npm run build
 1. **Google Search Console验证**
    - 访问 [Google Search Console](https://search.google.com/search-console)
    - 添加网站并完成验证
-   - 提交sitemap：`https://chico-lac.vercel.app/sitemap.xml`
+   - 提交sitemap：`https://chico.aimake.cc/sitemap.xml`
 
 2. **查看详细指南**
    - 查看 `SEO_GUIDE.md` 获取完整的SEO设置步骤
@@ -288,7 +291,7 @@ npm run build
 3. **检查索引状态**
    ```bash
    # 在Google搜索框输入
-   site:chico-lac.vercel.app
+   site:chico.aimake.cc
    ```
 
 ### SEO相关文件
@@ -306,6 +309,3 @@ MIT
 ---
 
 Built with ❤️ using Next.js & Tailwind CSS
-
-
-<!-- Auto deploy test - 2026-01-13_15:54:16 -->
