@@ -50,6 +50,7 @@ firebase-debug.log
 
 # Claude settings
 .claude/
+.serena/
 
 # Screenshots and test images
 *-screenshot.png
