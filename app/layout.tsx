@@ -1,9 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Analytics } from './components/Analytics'
 import { ErrorBoundary } from './components/ErrorBoundary'
-import { PerformanceMonitor } from './components/PerformanceMonitor'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -85,8 +83,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ErrorBoundary>
           {children}
-          <Analytics />
-          <PerformanceMonitor />
         </ErrorBoundary>
       </body>
     </html>

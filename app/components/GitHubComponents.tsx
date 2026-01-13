@@ -29,7 +29,7 @@ export function GitHubStats() {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 animate-pulse">
         {[...Array(3)].map((_, i) => (
-          <div key={i} className="p-5 rounded-xl bg-neutral-200 h-24" />
+          <div key={i} className="p-5 rounded-xl bg-white/40 border border-white/20 h-24 shadow-sm" />
         ))}
       </div>
     )
@@ -37,16 +37,16 @@ export function GitHubStats() {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <div className="p-5 rounded-xl bg-white/60 backdrop-blur-sm border border-neutral-200">
-        <div className="text-3xl font-bold gradient-text mb-1">{stats?.repos || 0}</div>
+      <div className="p-5 rounded-xl bg-white/60 backdrop-blur-sm border border-neutral-200 hover:shadow-md transition-all">
+        <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 mb-1">{stats?.repos || 0}</div>
         <div className="text-sm text-neutral-600">Repositories</div>
       </div>
-      <div className="p-5 rounded-xl bg-white/60 backdrop-blur-sm border border-neutral-200">
-        <div className="text-3xl font-bold gradient-text mb-1">1K+</div>
+      <div className="p-5 rounded-xl bg-white/60 backdrop-blur-sm border border-neutral-200 hover:shadow-md transition-all">
+        <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 mb-1">1K+</div>
         <div className="text-sm text-neutral-600">Contributions</div>
       </div>
-      <div className="p-5 rounded-xl bg-white/60 backdrop-blur-sm border border-neutral-200">
-        <div className="text-3xl font-bold gradient-text mb-1">{stats?.stars || 0}</div>
+      <div className="p-5 rounded-xl bg-white/60 backdrop-blur-sm border border-neutral-200 hover:shadow-md transition-all">
+        <div className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-red-600 mb-1">{stats?.stars || 0}</div>
         <div className="text-sm text-neutral-600">Stars Earned</div>
       </div>
     </div>
@@ -54,35 +54,32 @@ export function GitHubStats() {
 }
 
 export function Avatar() {
-  const [avatarUrl, setAvatarUrl] = useState('')
+  const [avatarUrl, setAvatarUrl] = useState('https://github.com/chicogong.png')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // Only fetch if we want to confirm the URL or get other data, 
+    // but the png link is reliable.
+    setLoading(false)
+    
+    // Optionally still fetch for latest, but don't clear the default
     fetch('/api/github')
       .then(res => res.json())
       .then(data => {
-        setAvatarUrl(data.avatarUrl)
-        setLoading(false)
+        if (data.avatarUrl) {
+          setAvatarUrl(data.avatarUrl)
+        }
       })
-      .catch(() => setLoading(false))
+      .catch(() => {
+        // Do nothing on error, keep default
+      })
   }, [])
-
-  if (loading || !avatarUrl) {
-    return (
-      <div
-        className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold shrink-0 shadow-lg scale-on-hover"
-        aria-hidden="true"
-      >
-        C
-      </div>
-    )
-  }
 
   return (
     <img
       src={avatarUrl}
       alt="Chico avatar"
-      className="w-20 h-20 rounded-full shrink-0 shadow-lg scale-on-hover"
+      className="w-24 h-24 rounded-full shadow-lg hover:shadow-2xl transition-all duration-500 scale-on-hover object-cover ring-4 ring-white"
       loading="eager"
     />
   )
