@@ -11,15 +11,24 @@ export const profile = {
 
 export const skills = [
   { name: 'WebRTC', category: 'Core' },
-  { name: 'Real-time AI', category: 'Core' },
+  { name: 'Realtime AI', category: 'Core' },
   { name: 'WebSocket', category: 'Core' },
+  { name: 'Streaming', category: 'Core' },
   { name: 'Next.js', category: 'Frontend' },
   { name: 'React', category: 'Frontend' },
   { name: 'TypeScript', category: 'Frontend' },
   { name: 'Node.js', category: 'Backend' },
+  { name: 'Go', category: 'Backend' },
   { name: 'Python', category: 'Backend' },
-  { name: 'LLM APIs', category: 'AI' },
-  { name: 'Voice AI', category: 'AI' },
+  { name: 'PostgreSQL', category: 'Backend' },
+  { name: 'Vector DB', category: 'Backend' },
+  { name: 'Speech AI', category: 'AI' },
+  { name: 'vLLM', category: 'AI' },
+  { name: 'Agentic AI', category: 'AI' },
+  { name: 'RAG', category: 'AI' },
+  { name: 'LLM Fine-tuning', category: 'AI' },
+  { name: 'Data Pipeline', category: 'AI' },
+  { name: 'DSP', category: 'AI' },
 ]
 
 export const projects = [
