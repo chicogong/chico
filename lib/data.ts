@@ -71,13 +71,13 @@ export const links = [
 export const articles = [
   {
     title: 'Building Real-time Voice AI with WebRTC',
-    url: 'https://realtime-ai.chat/blog/webrtc-voice-ai',
-    date: '2024-12',
+    url: 'https://realtime-ai.chat/posts/voice-technology/webrtc-voice-ai/',
+    date: '2025-01',
   },
   {
     title: 'Optimizing WebSocket Performance for AI Agents',
-    url: 'https://realtime-ai.chat/blog/websocket-optimization',
-    date: '2024-11',
+    url: 'https://realtime-ai.chat/posts/development-guides/websocket-optimization/',
+    date: '2025-01',
   },
 ]
 
