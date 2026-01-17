@@ -10,25 +10,23 @@ export const profile = {
 }
 
 export const skills = [
-  { name: 'WebRTC', category: 'Core' },
-  { name: 'Realtime AI', category: 'Core' },
-  { name: 'WebSocket', category: 'Core' },
-  { name: 'Streaming', category: 'Core' },
-  { name: 'Next.js', category: 'Frontend' },
-  { name: 'React', category: 'Frontend' },
-  { name: 'TypeScript', category: 'Frontend' },
-  { name: 'Node.js', category: 'Backend' },
-  { name: 'Go', category: 'Backend' },
-  { name: 'Python', category: 'Backend' },
-  { name: 'PostgreSQL', category: 'Backend' },
-  { name: 'Vector DB', category: 'Backend' },
-  { name: 'Speech AI', category: 'AI' },
-  { name: 'vLLM', category: 'AI' },
-  { name: 'Agentic AI', category: 'AI' },
-  { name: 'RAG', category: 'AI' },
-  { name: 'LLM Fine-tuning', category: 'AI' },
+  // Core - Voice AI specialization
+  { name: 'Voice AI', category: 'Core' },
+  { name: 'RTC Systems', category: 'Core' },
+  { name: 'Low-latency Streaming', category: 'Core' },
+  // Development - Full-stack capabilities
+  { name: 'TypeScript', category: 'Dev' },
+  { name: 'Go/Python', category: 'Dev' },
+  { name: 'React/Next.js', category: 'Dev' },
+  { name: 'MySQL/ES', category: 'Dev' },
+  // AI - LLM & Speech
+  { name: 'LLM/Agentic', category: 'AI' },
+  { name: 'Speech Synthesis', category: 'AI' },
   { name: 'Data Pipeline', category: 'AI' },
-  { name: 'DSP', category: 'AI' },
+  { name: 'Fine-tuning', category: 'AI' },
+  // Ops - DevOps & SRE
+  { name: 'CI/CD', category: 'Ops' },
+  { name: 'Observability', category: 'Ops' },
 ]
 
 export const projects = [
@@ -71,12 +69,12 @@ export const links = [
 export const articles = [
   {
     title: 'Building Real-time Voice AI with WebRTC',
-    url: 'https://realtime-ai.chat/posts/voice-technology/webrtc-voice-ai/',
+    url: 'https://realtime-ai.chat/posts/building-real-time-voice-ai-with-webrtc/',
     date: '2025-01',
   },
   {
     title: 'Optimizing WebSocket Performance for AI Agents',
-    url: 'https://realtime-ai.chat/posts/development-guides/websocket-optimization/',
+    url: 'https://realtime-ai.chat/posts/optimizing-websocket-performance-for-ai-agents/',
     date: '2025-01',
   },
 ]
@@ -85,13 +83,13 @@ export const experience = [
   {
     company: 'Tencent',
     role: 'Realtime AI Engineer',
-    period: '2023 - Present',
-    description: 'Building real-time voice AI and conversational experiences',
+    period: '2022 - Present',
+    description: 'Building real-time voice AI and conversational experiences. Specializing in advanced AI Voice technologies, Neural Audio Synthesis, and end-to-end speech interaction systems.',
   },
   {
-    company: 'Previous Company',
+    company: 'University',
     role: 'Full Stack Developer',
-    period: '2021 - 2023',
-    description: 'Developed web applications with React and Node.js',
+    period: '2018 - 2022',
+    description: 'Major in Communication Engineering. Architected and implemented high-performance full-stack solutions spanning distributed backend systems, modern web frameworks, and native mobile applications.',
   },
 ]
